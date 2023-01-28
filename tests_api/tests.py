@@ -57,7 +57,7 @@ def test_update_single_user():
     assert result.json()["name"] == "Andrew_8"
 
 
-def test_login_single_user():
+def test_login_single_user_successful():
     login_user: Response = requests.post(
         url=f"{base_url}api/login",
         json=
@@ -67,7 +67,7 @@ def test_login_single_user():
         }
     )
     assert login_user.status_code == 200
-    assert S(schemas.login_single_user) == login_user.json()
+    assert S(schemas.login_single_user_successful) == login_user.json()
     assert len(login_user.json()["token"]) == 17
 
 
