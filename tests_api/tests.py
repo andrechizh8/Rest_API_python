@@ -10,7 +10,7 @@ def test_create_single_user():
         url=f"{base_url}api/users",
         json=
         {
-            "name": "Andrew",
+            "name": "Andew",
             "job": "QA"
         }
     )
